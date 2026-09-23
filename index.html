@@ -137,7 +137,7 @@
             <!-- Project Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
                 
-                <!-- Project Card 1: Using Ssangyong.png -->
+                <!-- Project Card 1 -->
                 <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="graphic">
                     <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
                         <img src="Ssangyong.png" alt="Ssangyong Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -151,7 +151,7 @@
                         <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Custom graphic design work showcasing professional layout structure and visual branding aesthetics.</p>
                         <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
                             <span class="text-xs text-slate-500 font-medium">Photoshop</span>
-                            <button onclick="openModal('Ssangyong Design Project', 'A custom graphic design project created with detailed visual elements and clean presentation formatting.', 'Ssangyong.png', '#', '#')" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
+                            <button onclick="openModal('Ssangyong Design Project', 'A custom graphic design project created with detailed visual elements and clean presentation formatting.', 'Ssangyong.png', false)" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
                                 <span>View Details</span>
                                 <i class="fa-solid fa-arrow-right text-xs"></i>
                             </button>
@@ -159,7 +159,7 @@
                     </div>
                 </div>
 
-                <!-- Project Card 2: Using Khmer festival.png -->
+                <!-- Project Card 2 -->
                 <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="graphic">
                     <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
                         <img src="Khmer festival.png" alt="Khmer Festival Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -173,7 +173,7 @@
                         <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Vibrant cultural event design celebrating traditional heritage through striking graphics and composition.</p>
                         <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
                             <span class="text-xs text-slate-500 font-medium">Photoshop & Illustrator</span>
-                            <button onclick="openModal('Khmer Festival Artwork', 'An artistic festival design project highlighting cultural celebration themes with rich colors and custom composition assets.', 'Khmer festival.png', '#', '#')" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
+                            <button onclick="openModal('Khmer Festival Artwork', 'An artistic festival design project highlighting cultural celebration themes with rich colors and custom composition assets.', 'Khmer festival.png', false)" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
                                 <span>View Details</span>
                                 <i class="fa-solid fa-arrow-right text-xs"></i>
                             </button>
@@ -181,7 +181,7 @@
                     </div>
                 </div>
 
-                <!-- Project Card 3: Video Editing Reel with YouTube Link -->
+                <!-- Project Card 3: Embedded YouTube Short -->
                 <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="video">
                     <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
                         <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -195,9 +195,9 @@
                         <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Dynamic vertical video edit featuring rapid cuts, engaging pacing, and custom visual effects.</p>
                         <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
                             <span class="text-xs text-slate-500 font-medium">Premiere Pro & After Effects</span>
-                            <button onclick="openModal('YouTube Video Edit Short', 'An engaging short-form video edit featuring fast-paced cuts, professional transitions, and clean audio balance.', 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80', '#', 'https://www.youtube.com/shorts/z_zcIdHW-_k')" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
-                                <span>View Details</span>
-                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            <button onclick="openModal('YouTube Video Edit Short', 'An engaging short-form video edit featuring fast-paced cuts, professional transitions, and clean audio balance.', 'https://www.youtube.com/embed/z_zcIdHW-_k', true)" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
+                                <span>Watch Video</span>
+                                <i class="fa-solid fa-play text-xs"></i>
                             </button>
                         </div>
                     </div>
@@ -393,25 +393,15 @@
     <!-- Project Detail Modal -->
     <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
         <div class="bg-white dark:bg-slate-900 max-w-2xl w-full rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl animate-in fade-in zoom-in-95 duration-200 max-h-[90vh] flex flex-col">
-            <div class="relative aspect-video bg-slate-200 dark:bg-slate-800">
-                <img id="modal-img" src="" alt="Project Preview" class="w-full h-full object-cover">
-                <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-950/60 text-white flex items-center justify-center hover:bg-slate-950">
+            <div id="modal-media-container" class="relative aspect-video bg-slate-950 flex items-center justify-center">
+                <!-- Dynamically populated image or iframe -->
+                <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-950/60 text-white flex items-center justify-center hover:bg-slate-950">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="p-8 overflow-y-auto">
                 <h3 id="modal-title" class="text-2xl font-extrabold mb-3"></h3>
                 <p id="modal-desc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8"></p>
-                <div class="flex flex-wrap gap-4 pt-4 border-t border-slate-100 dark:border-slate-800">
-                    <a id="modal-figma" href="#" target="_blank" class="px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-xs flex items-center gap-2">
-                        <i class="fa-solid fa-eye"></i>
-                        <span>View Project File</span>
-                    </a>
-                    <a id="modal-demo" href="#" target="_blank" class="px-6 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-bold text-xs flex items-center gap-2">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        <span>External Link</span>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -474,20 +464,27 @@
             });
         });
 
-        // Modal Handlers
+        // Modal Handlers with Embedded YouTube Support
         const modal = document.getElementById('project-modal');
-        const modalImg = document.getElementById('modal-img');
+        const modalMediaContainer = document.getElementById('modal-media-container');
         const modalTitle = document.getElementById('modal-title');
         const modalDesc = document.getElementById('modal-desc');
-        const modalFigma = document.getElementById('modal-figma');
-        const modalDemo = document.getElementById('modal-demo');
 
-        function openModal(title, desc, imgSrc, figmaLink, demoLink) {
+        function openModal(title, desc, mediaSource, isVideo) {
             modalTitle.textContent = title;
             modalDesc.textContent = desc;
-            modalImg.src = imgSrc;
-            modalFigma.href = figmaLink;
-            modalDemo.href = demoLink;
+            
+            // Clear previous media content while keeping the close button
+            const closeBtnHTML = `<button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-950/60 text-white flex items-center justify-center hover:bg-slate-950"><i class="fa-solid fa-xmark"></i></button>`;
+
+            if (isVideo) {
+                // Embed YouTube iframe player directly in the modal
+                modalMediaContainer.innerHTML = closeBtnHTML + `<iframe src="${mediaSource}?autoplay=1" class="w-full h-full" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            } else {
+                // Display regular image
+                modalMediaContainer.innerHTML = closeBtnHTML + `<img src="${mediaSource}" alt="${title}" class="w-full h-full object-cover">`;
+            }
+
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
@@ -496,6 +493,8 @@
         function closeModal() {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
+            // Clear content to stop video playback when closing
+            modalMediaContainer.innerHTML = '';
             document.body.style.overflow = 'auto';
         }
 
