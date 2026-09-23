@@ -181,7 +181,7 @@
                     </div>
                 </div>
 
-                <!-- Project Card 3: Embedded YouTube Short -->
+                <!-- Project Card 3 -->
                 <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="video">
                     <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
                         <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -474,14 +474,11 @@
             modalTitle.textContent = title;
             modalDesc.textContent = desc;
             
-            // Clear previous media content while keeping the close button
             const closeBtnHTML = `<button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-950/60 text-white flex items-center justify-center hover:bg-slate-950"><i class="fa-solid fa-xmark"></i></button>`;
 
             if (isVideo) {
-                // Embed YouTube iframe player directly in the modal
                 modalMediaContainer.innerHTML = closeBtnHTML + `<iframe src="${mediaSource}?autoplay=1" class="w-full h-full" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
             } else {
-                // Display regular image
                 modalMediaContainer.innerHTML = closeBtnHTML + `<img src="${mediaSource}" alt="${title}" class="w-full h-full object-cover">`;
             }
 
@@ -493,7 +490,6 @@
         function closeModal() {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-            // Clear content to stop video playback when closing
             modalMediaContainer.innerHTML = '';
             document.body.style.overflow = 'auto';
         }
