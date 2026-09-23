@@ -181,10 +181,9 @@
                     </div>
                 </div>
 
-                <!-- Project Card 3: YouTube Video with its actual thumbnail preview -->
+                <!-- Project Card 3 -->
                 <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="video">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <!-- Uses YouTube's official generated thumbnail automatically -->
                         <img src="https://img.youtube.com/vi/z_zcIdHW-_k/hqdefault.jpg" alt="YouTube Video Edit Short" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                             <span class="text-xs font-semibold text-white bg-violet-600/90 backdrop-blur-md px-3 py-1 rounded-lg">Video Editing</span>
@@ -213,7 +212,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section with image 2.jpg -->
     <section id="about" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -240,7 +239,8 @@
                 <div class="relative">
                     <div class="aspect-square rounded-3xl overflow-hidden bg-gradient-to-tr from-violet-600 to-fuchsia-500 p-1.5 shadow-2xl shadow-violet-500/20">
                         <div class="w-full h-full bg-slate-900 rounded-[22px] overflow-hidden relative flex items-center justify-center">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Sun Porkuong Profile Photo" class="w-full h-full object-cover opacity-90">
+                            <!-- Using image 2.jpg -->
+                            <img src="image 2.jpg" alt="Sun Porkuong Profile Photo" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-8">
                                 <div>
                                     <h3 class="text-white font-bold text-xl">Sun Porkuong</h3>
@@ -400,7 +400,6 @@
     <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
         <div class="bg-white dark:bg-slate-900 max-w-2xl w-full rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl animate-in fade-in zoom-in-95 duration-200 max-h-[90vh] flex flex-col">
             <div id="modal-media-container" class="relative aspect-video bg-slate-950 flex items-center justify-center">
-                <!-- Dynamically populated image or iframe -->
                 <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-950/60 text-white flex items-center justify-center hover:bg-slate-950">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -414,7 +413,6 @@
 
     <!-- JavaScript Interactions -->
     <script>
-        // Dark Mode Toggle
         const themeToggleBtn = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
 
@@ -431,7 +429,6 @@
             }
         });
 
-        // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -446,7 +443,6 @@
             });
         });
 
-        // Project Filtering
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
@@ -470,7 +466,6 @@
             });
         });
 
-        // Modal Handlers with Embedded YouTube Support
         const modal = document.getElementById('project-modal');
         const modalMediaContainer = document.getElementById('modal-media-container');
         const modalTitle = document.getElementById('modal-title');
@@ -506,7 +501,6 @@
             }
         });
 
-        // Contact Form Handling
         function handleFormSubmit(e) {
             e.preventDefault();
             const successDiv = document.getElementById('form-success');
