@@ -212,7 +212,7 @@
         </div>
     </section>
 
-    <!-- About Section with image 2.jpg -->
+    <!-- About Section with adjusted full-head image fit -->
     <section id="about" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -220,10 +220,10 @@
                     <h2 class="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400 mb-2">About Me</h2>
                     <p class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">Visual storytelling through design & motion.</p>
                     <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                       Hi, I’m Sun Porkuong. I’m passionate about graphic design and video editing, and I enjoy turning simple ideas into creative and visually appealing content.
+                        Hello! I am Sun Porkuong. I specialize in turning creative concepts into captivating graphic designs and engaging video edits that grab attention and tell a story.
                     </p>
                     <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                        I can help create posters, social media designs, channel branding, and video edits that look clean, engaging, and professional. I always pay attention to the small details and try to make every project match the client’s style and ideas.
+                        Whether you need eye-catching posters, clean channel branding, or slick video montages, I bring a sharp eye for detail and professional production quality to every project.
                     </p>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
@@ -239,9 +239,9 @@
                 <div class="relative">
                     <div class="aspect-square rounded-3xl overflow-hidden bg-gradient-to-tr from-violet-600 to-fuchsia-500 p-1.5 shadow-2xl shadow-violet-500/20">
                         <div class="w-full h-full bg-slate-900 rounded-[22px] overflow-hidden relative flex items-center justify-center">
-                            <!-- Using image 2.jpg -->
-                            <img src="image 2.jpg" alt="Sun Porkuong Profile Photo" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-8">
+                            <!-- Changed to object-contain so the full head is visible without being cropped -->
+                            <img src="image 2.jpg" alt="Sun Porkuong Profile Photo" class="w-full h-full object-contain pt-4">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-8 pointer-events-none">
                                 <div>
                                     <h3 class="text-white font-bold text-xl">Sun Porkuong</h3>
                                     <p class="text-violet-300 text-xs">Graphic Designer & Video Editor</p>
