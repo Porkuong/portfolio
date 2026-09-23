@@ -181,12 +181,18 @@
                     </div>
                 </div>
 
-                <!-- Project Card 3 -->
+                <!-- Project Card 3: YouTube Video with its actual thumbnail preview -->
                 <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="video">
-                    <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <!-- Uses YouTube's official generated thumbnail automatically -->
+                        <img src="https://img.youtube.com/vi/z_zcIdHW-_k/hqdefault.jpg" alt="YouTube Video Edit Short" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                             <span class="text-xs font-semibold text-white bg-violet-600/90 backdrop-blur-md px-3 py-1 rounded-lg">Video Editing</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-violet-600/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
