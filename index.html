@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pich | Designer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-violet-500/30 group-hover:scale-105 transition-transform">
+                    P
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg tracking-tight">Pich</span>
+                    <span class="block text-xs font-medium text-violet-600 dark:text-violet-400">UI/UX & Visual Designer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#projects" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Projects</a>
+                <a href="#about" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" aria-label="Toggle Theme" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
+                </button>
+
+                <!-- Hire Me CTA -->
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-semibold text-sm shadow-lg shadow-violet-500/25 transition-all hover:shadow-violet-500/40 hover:-translate-y-0.5">
+                    Let's Talk
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl">
+            <div class="flex flex-col gap-3 font-medium text-base">
+                <a href="#projects" class="mobile-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
+                <a href="#about" class="mobile-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+                <a href="#skills" class="mobile-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
+                <a href="#contact" class="mobile-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-24 overflow-hidden">
+        <div class="absolute inset-0 -z-10 opacity-30 dark:opacity-20 pointer-events-none">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-violet-500 to-fuchsia-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-100 dark:bg-violet-950/60 text-violet-700 dark:text-violet-300 font-semibold text-xs mb-6 border border-violet-200 dark:border-violet-800/60 animate-bounce">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Available for Freelance & Full-time Roles
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight mb-6">
+                Crafting digital experiences with <span class="bg-gradient-to-r from-violet-600 via-indigo-500 to-fuchsia-500 bg-clip-text text-transparent">purpose & pixel precision</span>.
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10">
+                Hi, I'm Pich—a product and visual designer focused on creating intuitive user interfaces, captivating brand aesthetics, and modern web designs.
+            </p>
+            
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#projects" class="px-8 py-4 rounded-2xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-base shadow-xl shadow-violet-500/30 transition-all hover:-translate-y-1 flex items-center gap-2">
+                    <span>Explore My Work</span>
+                    <i class="fa-solid fa-arrow-down text-sm"></i>
+                </a>
+                <a href="#contact" class="px-8 py-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 font-bold text-base transition-all hover:-translate-y-1 shadow-sm">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Quick stats bar -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto pt-8 border-t border-slate-200 dark:border-slate-800/80">
+                <div>
+                    <div class="text-3xl font-extrabold text-violet-600 dark:text-violet-400">3+</div>
+                    <div class="text-xs text-slate-500 font-medium mt-1">Years Experience</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-violet-600 dark:text-violet-400">25+</div>
+                    <div class="text-xs text-slate-500 font-medium mt-1">Completed Projects</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-violet-600 dark:text-violet-400">100%</div>
+                    <div class="text-xs text-slate-500 font-medium mt-1">Client Satisfaction</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-violet-600 dark:text-violet-400">12k</div>
+                    <div class="text-xs text-slate-500 font-medium mt-1">Design Impressions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-100/50 dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400 mb-2">Portfolio Showcase</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold tracking-tight">Featured Design Posts & Works</p>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filter-container">
+                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-violet-600 text-white shadow-md shadow-violet-500/20 transition-all">All Work</button>
+                    <button data-filter="uiux" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">UI/UX Design</button>
+                    <button data-filter="web" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Web Design</button>
+                    <button data-filter="branding" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Branding</button>
+                </div>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
+                
+                <!-- Project Card 1 -->
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="uiux">
+                    <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="E-Commerce Mobile App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-xs font-semibold text-white bg-violet-600/90 backdrop-blur-md px-3 py-1 rounded-lg">UI/UX Design</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-1">Mobile Application</div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-violet-600 transition-colors">Nova E-Commerce App Redesign</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">A sleek, minimalist redesign focusing on fast user checkouts, personalized product discovery, and modern dark mode styling.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-xs text-slate-500 font-medium">Figma & Prototyping</span>
+                            <button onclick="openModal('Nova E-Commerce App Redesign', 'A comprehensive UX case study focused on optimizing user checkout flows for mobile e-commerce platforms. Conducted user research, wireframing, and interactive prototyping.', 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80', 'https://figma.com', '#')" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
+                                <span>View Details</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="web">
+                    <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="SaaS Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-xs font-semibold text-white bg-violet-600/90 backdrop-blur-md px-3 py-1 rounded-lg">Web Design</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-1">Web Platform</div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-violet-600 transition-colors">Nexus Analytics SaaS Dashboard</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Data visualization dashboard built for enterprise teams, translating complex metrics into intuitive interactive charts and cards.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-xs text-slate-500 font-medium">HTML, Tailwind & Figma</span>
+                            <button onclick="openModal('Nexus Analytics SaaS Dashboard', 'An enterprise-grade SaaS analytics platform design. Features custom modular widgets, deep data reporting tools, and a seamless responsive layout for desktop and tablet screens.', 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80', 'https://figma.com', '#')" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
+                                <span>View Details</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="branding">
+                    <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Brand Identity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-xs font-semibold text-white bg-violet-600/90 backdrop-blur-md px-3 py-1 rounded-lg">Branding</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-1">Brand Identity</div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-violet-600 transition-colors">Aura Architecture Visual Identity</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Complete visual system including logo design, typography guidelines, stationery kits, and digital brand collateral.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-xs text-slate-500 font-medium">Illustrator & Photoshop</span>
+                            <button onclick="openModal('Aura Architecture Visual Identity', 'A holistic corporate brand identity package crafted for a contemporary architecture studio, focusing on clean geometry, sophisticated monochromatic colorways, and timeless appeal.', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', 'https://figma.com', '#')" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
+                                <span>View Details</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="uiux">
+                    <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Fintech App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-xs font-semibold text-white bg-violet-600/90 backdrop-blur-md px-3 py-1 rounded-lg">UI/UX Design</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-1">Fintech UI</div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-violet-600 transition-colors">Vanguard Wealth Management App</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Secure, intuitive investment and portfolio tracking mobile experience with custom graphical charts and biometric login workflows.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-xs text-slate-500 font-medium">Figma Design System</span>
+                            <button onclick="openModal('Vanguard Wealth Management App', 'A secure fintech mobile application designed to simplify personal portfolio tracking, asset allocation, and stock trading for novice and experienced investors alike.', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80', 'https://figma.com', '#')" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
+                                <span>View Details</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="web">
+                    <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Landing Page" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-xs font-semibold text-white bg-violet-600/90 backdrop-blur-md px-3 py-1 rounded-lg">Web Design</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-1">Landing Page</div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-violet-600 transition-colors">Pulse AI Marketing Landing Page</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Conversion-optimized landing page featuring gorgeous gradient glow effects, interactive feature tabs, and customer testimonials.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-xs text-slate-500 font-medium">HTML, CSS & Tailwind</span>
+                            <button onclick="openModal('Pulse AI Marketing Landing Page', 'High-conversion landing page designed for an artificial intelligence marketing automation platform. Built with mobile-first responsiveness and smooth scroll interactions.', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80', 'https://figma.com', '#')" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
+                                <span>View Details</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="branding">
+                    <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=800&q=80" alt="Esports Gaming Branding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-xs font-semibold text-white bg-violet-600/90 backdrop-blur-md px-3 py-1 rounded-lg">Branding</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-1">Esports & Gaming</div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-violet-600 transition-colors">Heroic Esports Tournament Branding</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Dynamic tournament visual identity featuring custom typography, player cards, promotional posters, and broadcast overlays.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-xs text-slate-500 font-medium">Photoshop & Illustrator</span>
+                            <button onclick="openModal('Heroic Esports Tournament Branding', 'Comprehensive tournament brand package created for professional esports competitions. Features bold typography, high-contrast neon accents, and versatile player graphic templates.', 'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=1200&q=80', 'https://figma.com', '#')" class="text-violet-600 dark:text-violet-400 font-bold text-sm hover:underline flex items-center gap-1">
+                                <span>View Details</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400 mb-2">About Me</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">Designing with empathy, building with code.</p>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                        Hello again! I am Pich. My journey in design stems from a deep curiosity for how humans interact with technology. I bridge the gap between creative visual arts and robust front-end engineering.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                        Whether it's shaping intuitive mobile app interfaces, designing striking game-inspired posters, or organizing clean website code structures, I love bringing ambitious visions to life.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="text-violet-600 dark:text-violet-400 font-bold mb-1"><i class="fa-solid fa-graduation-cap mr-2"></i> Education</div>
+                            <div class="text-xs text-slate-500">B.S. in Design & Technology</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="text-violet-600 dark:text-violet-400 font-bold mb-1"><i class="fa-solid fa-location-dot mr-2"></i> Based In</div>
+                            <div class="text-xs text-slate-500">Available Worldwide (Remote)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="aspect-square rounded-3xl overflow-hidden bg-gradient-to-tr from-violet-600 to-fuchsia-500 p-1.5 shadow-2xl shadow-violet-500/20">
+                        <div class="w-full h-full bg-slate-900 rounded-[22px] overflow-hidden relative flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Pich Profile Photo" class="w-full h-full object-cover opacity-90">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-8">
+                                <div>
+                                    <h3 class="text-white font-bold text-xl">Pich</h3>
+                                    <p class="text-violet-300 text-xs">UI/UX & Visual Creator</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-100/50 dark:bg-slate-900/50 border-t border-slate-200/60 dark:border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400 mb-2">Expertise & Tools</h2>
+            <p class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-12">My Design & Tech Toolkit</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Skill 1 -->
+                <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center hover:-translate-y-1 transition-transform">
+                    <div class="w-14 h-14 rounded-2xl bg-violet-100 dark:bg-violet-950 text-violet-600 dark:text-violet-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="font-bold text-sm mb-1">Figma</h3>
+                    <span class="text-xs text-slate-500">UI/UX Prototyping</span>
+                </div>
+                <!-- Skill 2 -->
+                <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center hover:-translate-y-1 transition-transform">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <h3 class="font-bold text-sm mb-1">HTML & CSS</h3>
+                    <span class="text-xs text-slate-500">Semantic Layouts</span>
+                </div>
+                <!-- Skill 3 -->
+                <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center hover:-translate-y-1 transition-transform">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <h3 class="font-bold text-sm mb-1">Tailwind CSS</h3>
+                    <span class="text-xs text-slate-500">Modern Styling</span>
+                </div>
+                <!-- Skill 4 -->
+                <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center hover:-translate-y-1 transition-transform">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-brands fa-git-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-sm mb-1">GitHub</h3>
+                    <span class="text-xs text-slate-500">Version Control</span>
+                </div>
+                <!-- Skill 5 -->
+                <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center hover:-translate-y-1 transition-transform">
+                    <div class="w-14 h-14 rounded-2xl bg-fuchsia-100 dark:bg-fuchsia-950 text-fuchsia-600 dark:text-fuchsia-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+                    <h3 class="font-bold text-sm mb-1">Photoshop</h3>
+                    <span class="text-xs text-slate-500">Digital Imaging</span>
+                </div>
+                <!-- Skill 6 -->
+                <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center hover:-translate-y-1 transition-transform">
+                    <div class="w-14 h-14 rounded-2xl bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3 class="font-bold text-sm mb-1">Game Art</h3>
+                    <span class="text-xs text-slate-500">Posters & Concepts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400 mb-2">Get in Touch</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">Let's build something amazing together.</p>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                        Have a project in mind, a design role to discuss, or just want to say hi? Drop me a message and I'll get back to you within 24 hours.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-violet-100 dark:bg-violet-950 text-violet-600 dark:text-violet-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 font-medium">Email Me</div>
+                                <div class="font-bold text-sm">pich.designer@example.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-violet-100 dark:bg-violet-950 text-violet-600 dark:text-violet-400 flex items-center justify-center text-lg">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 font-medium">GitHub Profile</div>
+                                <div class="font-bold text-sm">github.com/Porkuong</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl relative">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider mb-2">Your Name</label>
+                            <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-violet-600 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider mb-2">Email Address</label>
+                            <input type="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-violet-600 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider mb-2">Your Message</label>
+                            <textarea rows="4" required placeholder="Tell me about your project or job opportunity..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-violet-600 text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-sm shadow-lg shadow-violet-500/25 transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                    <!-- Success Message Toast -->
+                    <div id="form-success" class="hidden absolute inset-0 bg-white dark:bg-slate-900 rounded-3xl flex flex-col items-center justify-center text-center p-8">
+                        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="font-extrabold text-xl mb-2">Message Sent!</h3>
+                        <p class="text-sm text-slate-500 mb-6">Thank you for reaching out. I will get back to you shortly.</p>
+                        <button onclick="resetForm()" class="px-6 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 font-bold text-xs">Send Another</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-violet-600 text-white font-bold flex items-center justify-center text-sm">P</div>
+                <span class="font-bold text-sm">© 2026 Pich. All rights reserved.</span>
+            </div>
+            <div class="flex items-center gap-4 text-slate-500">
+                <a href="https://github.com/Porkuong" target="_blank" class="hover:text-violet-600 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
+                <a href="#" class="hover:text-violet-600 transition-colors"><i class="fa-brands fa-dribbble text-lg"></i></a>
+                <a href="#" class="hover:text-violet-600 transition-colors"><i class="fa-brands fa-behance text-lg"></i></a>
+                <a href="#" class="hover:text-violet-600 transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+        <div class="bg-white dark:bg-slate-900 max-w-2xl w-full rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl animate-in fade-in zoom-in-95 duration-200 max-h-[90vh] flex flex-col">
+            <div class="relative aspect-video bg-slate-200 dark:bg-slate-800">
+                <img id="modal-img" src="" alt="Project Preview" class="w-full h-full object-cover">
+                <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-950/60 text-white flex items-center justify-center hover:bg-slate-950">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-8 overflow-y-auto">
+                <h3 id="modal-title" class="text-2xl font-extrabold mb-3"></h3>
+                <p id="modal-desc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8"></p>
+                <div class="flex flex-wrap gap-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                    <a id="modal-figma" href="#" target="_blank" class="px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-xs flex items-center gap-2">
+                        <i class="fa-brands fa-figma"></i>
+                        <span>Inspect Figma File</span>
+                    </a>
+                    <a id="modal-demo" href="#" target="_blank" class="px-6 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-bold text-xs flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span>Live Demo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Dark Mode Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Project Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-violet-600', 'text-white', 'shadow-md', 'shadow-violet-500/20');
+                    b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                });
+                btn.classList.add('active', 'bg-violet-600', 'text-white', 'shadow-md', 'shadow-violet-500/20');
+                btn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Handlers
+        const modal = document.getElementById('project-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalFigma = document.getElementById('modal-figma');
+        const modalDemo = document.getElementById('modal-demo');
+
+        function openModal(title, desc, imgSrc, figmaLink, demoLink) {
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modalImg.src = imgSrc;
+            modalFigma.href = figmaLink;
+            modalDemo.href = demoLink;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Contact Form Handling
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const successBox = document.getElementById('form-success');
+            successBox.classList.remove('hidden');
+            successBox.classList.add('flex');
+        }
+
+        function resetForm() {
+            document.getElementById('contact-form').reset();
+            const successBox = document.getElementById('form-success');
+            successBox.classList.add('hidden');
+            successBox.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
