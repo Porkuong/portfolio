@@ -30,6 +30,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        /* Custom horizontal scrollbar styling */
+        .hide-scrollbar::-webkit-scrollbar {
+            height: 8px;
+        }
+        .hide-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 9999px;
+        }
+        .hide-scrollbar::-webkit-scrollbar-thumb {
+            background: #7c3aed;
+            border-radius: 9999px;
+        }
+        .hide-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #6d28d9;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
@@ -116,8 +131,8 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-slate-100/50 dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800/60">
+    <!-- Projects Section (Horizontal Scroll Carousel) -->
+    <section id="projects" class="py-20 bg-slate-100/50 dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800/60 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                 <div>
@@ -125,20 +140,25 @@
                     <p class="text-3xl sm:text-4xl font-extrabold tracking-tight">Featured Design Posts & Edits</p>
                 </div>
                 
-                <!-- Filter Buttons -->
-                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filter-container">
-                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-violet-600 text-white shadow-md shadow-violet-500/20 transition-all">All Work</button>
-                    <button data-filter="graphic" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Graphic Design</button>
-                    <button data-filter="video" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Video Editing</button>
-                    <button data-filter="branding" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Branding</button>
+                <!-- Filter Buttons & Scroll Hint -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-4 mt-6 md:mt-0">
+                    <div class="flex items-center gap-2 text-xs text-violet-600 dark:text-violet-400 font-semibold bg-violet-100 dark:bg-violet-950/60 px-3 py-1.5 rounded-lg w-fit">
+                        <i class="fa-solid fa-arrows-left-right animate-pulse"></i> Scroll horizontally below
+                    </div>
+                    <div class="flex flex-wrap gap-2" id="filter-container">
+                        <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-violet-600 text-white shadow-md shadow-violet-500/20 transition-all">All Work</button>
+                        <button data-filter="graphic" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Graphic Design</button>
+                        <button data-filter="video" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Video Editing</button>
+                        <button data-filter="branding" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Branding</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Project Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
+            <!-- Horizontal Scrolling Container -->
+            <div class="flex overflow-x-auto hide-scrollbar gap-8 pb-6 pt-2 px-1 snap-x scroll-smooth" id="project-grid">
                 
                 <!-- Project Card: Ssangyong -->
-                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="graphic">
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[320px] sm:min-w-[380px] max-w-[380px] snap-start shrink-0" data-category="graphic">
                     <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
                         <img src="Ssangyong.png" alt="Ssangyong Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -160,7 +180,7 @@
                 </div>
 
                 <!-- Project Card: Khmer Festival -->
-                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="graphic">
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[320px] sm:min-w-[380px] max-w-[380px] snap-start shrink-0" data-category="graphic">
                     <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
                         <img src="Khmer festival.png" alt="Khmer Festival Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -182,7 +202,7 @@
                 </div>
 
                 <!-- Project Card: Primister3 -->
-                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="branding">
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[320px] sm:min-w-[380px] max-w-[380px] snap-start shrink-0" data-category="branding">
                     <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
                         <img src="primister3.jpg" alt="Primister 3 Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -204,7 +224,7 @@
                 </div>
 
                 <!-- Project Card: Artboard 1 -->
-                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="graphic">
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[320px] sm:min-w-[380px] max-w-[380px] snap-start shrink-0" data-category="graphic">
                     <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
                         <img src="Artboard 1.png" alt="Artboard 1 Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -226,7 +246,7 @@
                 </div>
 
                 <!-- Project Card: Burger -->
-                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="branding">
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[320px] sm:min-w-[380px] max-w-[380px] snap-start shrink-0" data-category="branding">
                     <div class="relative aspect-video overflow-hidden bg-slate-200 dark:bg-slate-800">
                         <img src="burger.png" alt="Burger Promotional Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -248,7 +268,7 @@
                 </div>
 
                 <!-- Project Card: YouTube Video Edit Short -->
-                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="video">
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[320px] sm:min-w-[380px] max-w-[380px] snap-start shrink-0" data-category="video">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
                         <img src="https://img.youtube.com/vi/z_zcIdHW-_k/hqdefault.jpg" alt="YouTube Video Edit Short" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -275,7 +295,7 @@
                 </div>
 
                 <!-- Project Card: YouTube Video 1 (Bi41SUtnn3c) -->
-                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="video">
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[320px] sm:min-w-[380px] max-w-[380px] snap-start shrink-0" data-category="video">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
                         <img src="https://img.youtube.com/vi/Bi41SUtnn3c/hqdefault.jpg" alt="YouTube Video Project 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -302,7 +322,7 @@
                 </div>
 
                 <!-- Project Card: YouTube Video 2 (Tw66m37ReFM) -->
-                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="video">
+                <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[320px] sm:min-w-[380px] max-w-[380px] snap-start shrink-0" data-category="video">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
                         <img src="https://img.youtube.com/vi/Tw66m37ReFM/hqdefault.jpg" alt="YouTube Video Project 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
