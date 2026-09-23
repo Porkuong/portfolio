@@ -131,31 +131,39 @@
         </div>
     </section>
 
-    <!-- Projects Section (Horizontal Scroll Carousel) -->
+    <!-- Projects Section (Horizontal Scroll Carousel with Navigation Buttons) -->
     <section id="projects" class="py-20 bg-slate-100/50 dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800/60 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div>
                     <h2 class="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400 mb-2">Portfolio Showcase</h2>
                     <p class="text-3xl sm:text-4xl font-extrabold tracking-tight">Featured Design Posts & Edits</p>
                 </div>
                 
-                <!-- Filter Buttons & Scroll Hint -->
-                <div class="flex flex-col sm:flex-row sm:items-center gap-4 mt-6 md:mt-0">
-                    <div class="flex items-center gap-2 text-xs text-violet-600 dark:text-violet-400 font-semibold bg-violet-100 dark:bg-violet-950/60 px-3 py-1.5 rounded-lg w-fit">
-                        <i class="fa-solid fa-arrows-left-right animate-pulse"></i> Scroll horizontally below
-                    </div>
+                <!-- Filters & Scroll Navigation Buttons -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                    <!-- Filter Buttons -->
                     <div class="flex flex-wrap gap-2" id="filter-container">
                         <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-violet-600 text-white shadow-md shadow-violet-500/20 transition-all">All Work</button>
                         <button data-filter="graphic" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Graphic Design</button>
                         <button data-filter="video" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Video Editing</button>
                         <button data-filter="branding" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Branding</button>
                     </div>
+
+                    <!-- Left / Right Scroll Buttons -->
+                    <div class="flex items-center gap-2">
+                        <button onclick="scrollCarousel(-1)" aria-label="Scroll Left" class="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-violet-600 hover:text-white dark:hover:bg-violet-600 transition-all shadow-sm">
+                            <i class="fa-solid fa-arrow-left text-sm"></i>
+                        </button>
+                        <button onclick="scrollCarousel(1)" aria-label="Scroll Right" class="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-violet-600 hover:text-white dark:hover:bg-violet-600 transition-all shadow-sm">
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <!-- Horizontal Scrolling Container -->
-            <div class="flex overflow-x-auto hide-scrollbar gap-8 pb-6 pt-2 px-1 snap-x scroll-smooth" id="project-grid">
+            <div class="flex overflow-x-auto hide-scrollbar gap-8 pb-6 pt-2 px-1 snap-x scroll-smooth" id="project-carousel">
                 
                 <!-- Project Card: Ssangyong -->
                 <div class="project-card group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[320px] sm:min-w-[380px] max-w-[380px] snap-start shrink-0" data-category="graphic">
@@ -585,6 +593,13 @@
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Carousel Scroll Function
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('project-carousel');
+            const scrollAmount = 400; // pixels to scroll per click
+            carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
 
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
